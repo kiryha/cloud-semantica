@@ -116,14 +116,19 @@ header h1 {
 }
 
 .calc-hint {
-    text-align: center;
-    margin-top: 14px;
+    display: inline-block;
+    text-align: left;
+    margin: 14px auto 0;
     font-size: 0.82rem;
     color: #999;
 }
 
+.calculator {
+    text-align: center;
+}
+
 .calc-hint .op {
-    color: #1a73e8;
+    color: #555;
     font-family: "JetBrains Mono", "Fira Code", monospace;
     font-weight: 600;
 }
