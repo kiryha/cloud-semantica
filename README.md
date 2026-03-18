@@ -5,15 +5,16 @@ colorFrom: pink
 colorTo: red
 sdk: docker
 pinned: false
-short_description: 'Semantic calculator: math on words meaning'
+short_description: 'Language Math: Adding and Subtracting Word Meanings'
 ---
 
 # Semantica
-**The Geometry of Meaning: A Word Embedding Exploration Tool**
-
 ![Semantica Header](images/semantica.jpeg)
 
+## Introduction
 Semantica is a navigational tool for the hidden "map" of human language. It treats language not as a sequence of letters, but as a high-dimensional geometric space where word meaning is defined by physical coordinates.
+
+Try [Semantica](https://huggingface.co/spaces/kiryha-krysko/Semantica) on Hugging Face
 
 ---
 
@@ -27,6 +28,8 @@ Run: `python -m uvicorn app.main:app --host 127.0.0.1 --port 8000`
 - Stage your changes: `git add .`
 - Commit them locally: `git commit -m "Describe your changes"`
 - Push to Hugging Face: `git push hf main`
+
+---
 
 ## The Theory: How Words Become Space
 
