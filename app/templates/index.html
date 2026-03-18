@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantica</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>Semantica</h1>
+        <p class="tagline">The Geometry of Meaning: A Word Embedding Exploration Tool</p>
+    </header>
+
+    <!-- Calculator -->
+    <section class="calculator">
+        <div class="calc-row">
+            <input
+                type="text"
+                id="expression"
+                class="calc-input"
+                placeholder="king - man + woman"
+                autocomplete="off"
+                spellcheck="false"
+            >
+            <span class="calc-equals">=</span>
+            <div id="result" class="calc-result">queen</div>
+        </div>
+        <p class="calc-hint">
+            Combine words with <span class="op">+</span> and <span class="op">-</span>&ensp;|&ensp;Spot the word that doesn't belong with <span class="op">|</span>
+        </p>
+    </section>
+
+    <!-- Divider -->
+    <hr class="divider">
+
+    <!-- Documentation -->
+    <article class="docs">
+
+        <h2>The Theory: How Words Become Space</h2>
+
+        <h3>1. The Language of Coordinates</h3>
+        <p>
+            Humans understand words through context and emotion. Computers, however, only understand numbers.
+            To bridge this gap, we use <strong>Word Embeddings</strong>.
+        </p>
+        <p>
+            Imagine every word in the English language is a floating point in a dark, infinite void.
+        </p>
+        <ul>
+            <li>Words with similar meanings (like <em>Ocean</em> and <em>Sea</em>) are clustered tightly together.</li>
+            <li>Opposites or unrelated words (like <em>Apple</em> and <em>Justice</em>) are miles apart.</li>
+        </ul>
+
+        <h3>2. The 300-Dimensional "Point Cloud"</h3>
+        <p>
+            In a 3D software like Houdini or Maya, a point is defined by 3 coordinates: <span class="math">(X, Y, Z)</span>.
+            Semantica operates in a <strong>300-dimensional space</strong>. Every word is a vector — a "pointer" from the center of the
+            universe <span class="math">(0, 0, 0&hellip;)</span> to a specific coordinate in this massive 300-axis grid. These extra dimensions
+            allow the computer to capture subtle nuances: one axis might represent "masculinity," another "royalty," and another "temperature."
+        </p>
+
+        <h3>3. Static Embeddings (GloVe)</h3>
+        <p>
+            This project utilizes <strong>GloVe (Global Vectors for Word Representation)</strong>. These are "static" embeddings, meaning
+            the computer has pre-scanned billions of lines of text (from Wikipedia and the web) to calculate these coordinates based on
+            <strong>co-occurrence</strong>. If two words frequently appear near each other in the real world, they are moved closer
+            together in the vector space.
+        </p>
+
+        <hr class="divider-light">
+
+        <h2>Semantic Arithmetic &amp; Spatial Logic</h2>
+        <p>
+            The true magic of Semantica is that because words are numbers, you can perform math on them
+            to uncover cultural relationships and navigate linguistic clusters.
+        </p>
+
+        <h3>1. Relational Analogies (<span class="op">+</span> and <span class="op">-</span>)</h3>
+        <p>
+            By adding and subtracting vectors, you can "transport" meanings across the map.
+        </p>
+        <div class="formula">
+            Vector("King") &minus; Vector("Man") + Vector("Woman") &asymp; Vector("Queen")
+        </div>
+        <p>
+            By subtracting the "man" vector from "king," we mathematically strip away the concept of masculinity while
+            retaining "royalty." Adding "woman" applies femininity to that royal essence, landing us at the coordinates for "queen."
+        </p>
+
+        <h3>2. Outlier Detection: The "Odd One Out" (<span class="op">|</span>)</h3>
+        <p>
+            The <span class="op">|</span> operator allows you to perform <strong>Spatial Filtering</strong>.
+            If you provide a list of words, Semantica will identify which word mathematically "doesn't belong."
+        </p>
+        <div class="formula">
+            apple | banana | meat | orange &rarr; <strong>meat</strong>
+        </div>
+        <p><strong>How it works:</strong></p>
+        <ol>
+            <li><strong>The Centroid:</strong> Semantica calculates the "Center of Gravity" (the average coordinate) for all words in your list.</li>
+            <li><strong>The Distance Scan:</strong> It then measures the distance from each word to that center.</li>
+            <li><strong>The Outlier:</strong> Words like <em>apple</em>, <em>banana</em>, and <em>orange</em> exist in a tight "Fruit Cluster."
+                <em>Meat</em>, however, is located in a distant part of the 300D space. Semantica flags the word with the
+                highest distance from the group as the outlier.</li>
+        </ol>
+
+    </article>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

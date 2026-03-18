@@ -1,0 +1,239 @@
+/* ── Reset & base ───────────────────────────────────────────── */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: #0a0a0a;
+    color: #d4d4d4;
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+}
+
+/* ── Container ─────────────────────────────────────────────── */
+
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+
+header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+header h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* ── Calculator ────────────────────────────────────────────── */
+
+.calculator {
+    margin-bottom: 56px;
+}
+
+.calc-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+}
+
+.calc-input {
+    flex: 1;
+    max-width: 400px;
+    padding: 14px 20px;
+    font-size: 1.15rem;
+    font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+    background: #141414;
+    color: #e0e0e0;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.calc-input:focus {
+    border-color: #444;
+}
+
+.calc-input::placeholder {
+    color: #444;
+}
+
+.calc-equals {
+    font-size: 1.4rem;
+    color: #555;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.calc-result {
+    flex: 0 1 200px;
+    min-width: 120px;
+    padding: 14px 20px;
+    font-size: 1.15rem;
+    font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+    color: #7dd3fc;
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    text-align: center;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.calc-result.empty {
+    color: #333;
+}
+
+.calc-result.loading {
+    color: #444;
+}
+
+.calc-hint {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 0.82rem;
+    color: #4a4a4a;
+}
+
+.calc-hint .op {
+    color: #7dd3fc;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-weight: 600;
+}
+
+/* ── Dividers ──────────────────────────────────────────────── */
+
+.divider {
+    border: none;
+    border-top: 1px solid #1e1e1e;
+    margin: 0 0 48px;
+}
+
+.divider-light {
+    border: none;
+    border-top: 1px solid #1a1a1a;
+    margin: 40px 0;
+}
+
+/* ── Documentation ─────────────────────────────────────────── */
+
+.docs h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f0f0f0;
+    margin-bottom: 24px;
+}
+
+.docs h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ccc;
+    margin: 32px 0 12px;
+}
+
+.docs p {
+    margin-bottom: 14px;
+    color: #aaa;
+}
+
+.docs ul, .docs ol {
+    margin: 0 0 14px 24px;
+    color: #aaa;
+}
+
+.docs li {
+    margin-bottom: 6px;
+}
+
+.docs em {
+    color: #c0c0c0;
+    font-style: italic;
+}
+
+.docs strong {
+    color: #d8d8d8;
+    font-weight: 600;
+}
+
+.math {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.op {
+    color: #7dd3fc;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-weight: 600;
+}
+
+.formula {
+    background: #111;
+    border-left: 3px solid #2a2a2a;
+    padding: 16px 24px;
+    margin: 16px 0;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 0.95rem;
+    color: #999;
+    border-radius: 0 6px 6px 0;
+}
+
+.formula strong {
+    color: #7dd3fc;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 40px 16px 80px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .calc-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .calc-input,
+    .calc-result {
+        max-width: 100%;
+        width: 100%;
+        flex: none;
+    }
+
+    .calc-equals {
+        font-size: 1.2rem;
+    }
+}
