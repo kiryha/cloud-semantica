@@ -13,8 +13,8 @@ html {
 }
 
 body {
-    background: #0a0a0a;
-    color: #d4d4d4;
+    background: #ffffff;
+    color: #333;
     font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
     line-height: 1.7;
 }
@@ -38,13 +38,13 @@ header h1 {
     font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: #ffffff;
+    color: #111;
     margin-bottom: 6px;
 }
 
 .tagline {
     font-size: 0.95rem;
-    color: #666;
+    color: #888;
     font-style: italic;
 }
 
@@ -61,31 +61,36 @@ header h1 {
     justify-content: center;
 }
 
-.calc-input {
-    flex: 1;
-    max-width: 400px;
-    padding: 14px 20px;
+.calc-input,
+.calc-result {
+    height: 52px;
+    padding: 0 20px;
     font-size: 1.15rem;
     font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
-    background: #141414;
-    color: #e0e0e0;
-    border: 1px solid #2a2a2a;
+    border: 1px solid #d0d0d0;
     border-radius: 8px;
     outline: none;
     transition: border-color 0.2s;
 }
 
+.calc-input {
+    flex: 1;
+    max-width: 400px;
+    background: #f7f7f7;
+    color: #222;
+}
+
 .calc-input:focus {
-    border-color: #444;
+    border-color: #999;
 }
 
 .calc-input::placeholder {
-    color: #444;
+    color: #bbb;
 }
 
 .calc-equals {
     font-size: 1.4rem;
-    color: #555;
+    color: #aaa;
     flex-shrink: 0;
     user-select: none;
 }
@@ -93,15 +98,9 @@ header h1 {
 .calc-result {
     flex: 0 1 200px;
     min-width: 120px;
-    padding: 14px 20px;
-    font-size: 1.15rem;
-    font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
-    color: #7dd3fc;
-    background: #141414;
-    border: 1px solid #2a2a2a;
-    border-radius: 8px;
+    background: #f7f7f7;
+    color: #1a73e8;
     text-align: center;
-    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,22 +108,22 @@ header h1 {
 }
 
 .calc-result.empty {
-    color: #333;
+    color: #ccc;
 }
 
 .calc-result.loading {
-    color: #444;
+    color: #bbb;
 }
 
 .calc-hint {
     text-align: center;
     margin-top: 14px;
     font-size: 0.82rem;
-    color: #4a4a4a;
+    color: #999;
 }
 
 .calc-hint .op {
-    color: #7dd3fc;
+    color: #1a73e8;
     font-family: "JetBrains Mono", "Fira Code", monospace;
     font-weight: 600;
 }
@@ -133,14 +132,47 @@ header h1 {
 
 .divider {
     border: none;
-    border-top: 1px solid #1e1e1e;
+    border-top: 1px solid #e0e0e0;
     margin: 0 0 48px;
 }
 
 .divider-light {
     border: none;
-    border-top: 1px solid #1a1a1a;
+    border-top: 1px solid #eee;
     margin: 40px 0;
+}
+
+/* ── Expand / collapse toggle ──────────────────────────────── */
+
+.docs-toggle {
+    margin: 0;
+}
+
+.docs-toggle summary {
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #888;
+    list-style: none;
+    text-align: center;
+    padding: 8px 0 32px;
+    transition: color 0.2s;
+}
+
+.docs-toggle summary:hover {
+    color: #444;
+}
+
+.docs-toggle summary::-webkit-details-marker {
+    display: none;
+}
+
+.docs-toggle summary::before {
+    content: "▸ ";
+}
+
+.docs-toggle[open] summary::before {
+    content: "▾ ";
 }
 
 /* ── Documentation ─────────────────────────────────────────── */
@@ -148,25 +180,25 @@ header h1 {
 .docs h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #f0f0f0;
+    color: #111;
     margin-bottom: 24px;
 }
 
 .docs h3 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #ccc;
+    color: #333;
     margin: 32px 0 12px;
 }
 
 .docs p {
     margin-bottom: 14px;
-    color: #aaa;
+    color: #555;
 }
 
 .docs ul, .docs ol {
     margin: 0 0 14px 24px;
-    color: #aaa;
+    color: #555;
 }
 
 .docs li {
@@ -174,40 +206,40 @@ header h1 {
 }
 
 .docs em {
-    color: #c0c0c0;
+    color: #444;
     font-style: italic;
 }
 
 .docs strong {
-    color: #d8d8d8;
+    color: #222;
     font-weight: 600;
 }
 
 .math {
     font-family: "JetBrains Mono", "Fira Code", monospace;
     font-size: 0.9em;
-    color: #888;
+    color: #777;
 }
 
 .op {
-    color: #7dd3fc;
+    color: #1a73e8;
     font-family: "JetBrains Mono", "Fira Code", monospace;
     font-weight: 600;
 }
 
 .formula {
-    background: #111;
-    border-left: 3px solid #2a2a2a;
+    background: #f5f5f5;
+    border-left: 3px solid #d0d0d0;
     padding: 16px 24px;
     margin: 16px 0;
     font-family: "JetBrains Mono", "Fira Code", monospace;
     font-size: 0.95rem;
-    color: #999;
+    color: #555;
     border-radius: 0 6px 6px 0;
 }
 
 .formula strong {
-    color: #7dd3fc;
+    color: #1a73e8;
 }
 
 /* ── Responsive ────────────────────────────────────────────── */
