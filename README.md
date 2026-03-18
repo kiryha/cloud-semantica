@@ -33,7 +33,7 @@ Run: `python -m uvicorn app.main:app --host 127.0.0.1 --port 8000`
 ## The Theory: How Words Become Space
 
 ### 1. The Bridge Between Words and Images
-If you’ve ever used a tool like **Midjourney** or **DALL-E**, you’ve seen "magic." You type a prompt, and a few seconds later, a photorealistic image appears. But how does the computer "know" what a "cyberpunk cat" looks like?
+If you’ve ever used a tool like **Midjourney** or **Nano Banana**, you’ve seen "magic." You type a prompt, and a few seconds later, a photorealistic image appears. But how does the computer "know" what a "cyberpunk cat" looks like?
 
 The secret isn't in the pixels; it's in the **Latent Space**. 
 
@@ -74,14 +74,26 @@ This project utilizes **GloVe (Global Vectors for Word Representation)**. These 
 ## Semantic Arithmetic & Spatial Logic
 The true magic of Language Math is that because words are numbers, you can perform math on them to navigate this hidden map.
 
-### 1. Relational Analogies (`+` and `-`)
+### 1. The Power of One Word: Finding the Neighborhood
+Before we do complex math, we have to find our location. When you enter a single word into the tool, you are dropping a GPS pin into the Latent Space.
+
+**Example:** `hot` $\rightarrow$ *warm, heat, cold, scorching*
+
+**How it works:**
+The tool looks at the 300-dimensional coordinate for your word and finds its **Nearest Neighbors**—the words whose pins are physically closest in the void. 
+
+
+
+> **The "Opposite" Quirk:** Users are often surprised that `hot` might return `cold` as a neighbor. In a Latent Space, **opposites share the same context.** Both "hot" and "cold" live in the "Temperature Neighborhood." They are much closer to each other than they are to a word like "Justice" or "Banana."
+
+### 2. Relational Analogies (`+` and `-`)
 By adding and subtracting vectors, you can "transport" meanings across the map.
 
 $$Vector(\text{"King"}) - Vector(\text{"Man"}) + Vector(\text{"Woman"}) \approx Vector(\text{"Queen"})$$
 
 By subtracting the "man" vector from "king," we mathematically strip away the concept of masculinity while retaining "royalty." Adding "woman" applies femininity to that royal essence, landing us at the coordinates for "queen."
 
-### 2. Group Logic: The "Odd One Out" (`|`)
+### 3. Group Logic: The "Odd One Out" (`|`)
 The `|` operator allows you to perform **Spatial Filtering**. If you provide a list of words, Semantica will identify which word mathematically "doesn't belong" in that specific neighborhood of the Latent Space.
 
 **Example:** `apple | banana | meat | orange` $\rightarrow$ **"meat"**
