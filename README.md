@@ -8,10 +8,9 @@ pinned: false
 short_description: 'Language Math: Adding and Subtracting Word Meanings'
 ---
 
-# Semantica
+## Introduction
 ![Semantica Header](images/semantica.jpeg)
 
-## Introduction
 Semantica is a navigational tool for the hidden "map" of human language. It treats language not as a sequence of letters, but as a high-dimensional geometric space where word meaning is defined by physical coordinates.
 
 Try [Semantica](https://huggingface.co/spaces/kiryha-krysko/Semantica) on Hugging Face
