@@ -1,4 +1,3 @@
-
 ---
 title: Semantica
 emoji: 🌖
@@ -56,4 +55,5 @@ The `|` operator allows you to perform **Spatial Filtering**. If you provide a l
 **How it works:**
 1. **The Centroid:** Semantica calculates the "Center of Gravity" (the average coordinate) for all words in your list.
 2. **The Distance Scan:** It then measures the distance from each word to that center.
+3. **The Outlier:** Words like *apple*, *banana*, and *orange* exist in a tight "Fruit Cluster." *Meat*, however, is located in a distant part of the 300D space. Semantica flags the word with the highest distance from the group as the outlier.
 3. **The Outlier:** Words like *apple*, *banana*, and *orange* exist in a tight "Fruit Cluster." *Meat*, however, is located in a distant part of the 300D space. Semantica flags the word with the highest distance from the group as the outlier.
