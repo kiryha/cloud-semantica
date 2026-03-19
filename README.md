@@ -24,6 +24,7 @@ Open Command Line Window in the Semantica folder.
 Run: `python -m uvicorn app.main:app --host 127.0.0.1 --port 8000`
 
 #### Puch Changes to HF
+Open Command Line Window in the Semantica folder. Run:  
 - Stage your changes: `git add .`
 - Commit them locally: `git commit -m "Describe your changes"`
 - Push to Hugging Face: `git push hf main`

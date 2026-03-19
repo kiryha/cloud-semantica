@@ -46,7 +46,34 @@
 
         <h2>The Theory: How Words Become Space</h2>
 
-        <h3>1. Word Embeddings: The Language of Coordinates</h3>
+        <h3>1. The Bridge Between Words and Images</h3>
+        <p>
+            If you've ever used a tool like <strong>Midjourney</strong> or <strong>Nano Banana</strong>, you've seen "magic."
+            You type a prompt, and a few seconds later, a photorealistic image appears. But how does the computer "know"
+            what a "cyberpunk cat" looks like?
+        </p>
+        <p>
+            The secret isn't in the pixels; it's in the <strong>Latent Space</strong>.
+        </p>
+
+        <h3>2. The GenAI Pipeline: From Text to Latent Space</h3>
+        <p>
+            In modern AI architectures like <strong>Diffusion Transformers (DiT)</strong> (the tech behind Sora and Flux),
+            the process works in three main stages:
+        </p>
+        <ul>
+            <li><strong>The Translator (Text Encoder):</strong> This is where <strong>Word Embeddings</strong> live. The AI takes your written prompt and translates every word into a unique set of coordinates (a vector).</li>
+            <li><strong>The Playground (Latent Space):</strong> Instead of trying to draw millions of tiny pixels at once, the AI works in a "compressed" version of reality called Latent Space. It's a mathematical universe where concepts (not colors) are organized.</li>
+            <li><strong>The Painter (Decoder):</strong> Once the AI has "sculpted" the concept in Latent Space, it converts those coordinates back into actual pixels that our human eyes can see.</li>
+        </ul>
+        <p>
+            <strong>Semantica (Language Math)</strong> focuses on the first two steps: understanding how human language is mapped
+            into that mathematical universe.
+        </p>
+
+        <hr class="divider-light">
+
+        <h3>3. Word Embeddings: The Language of Coordinates</h3>
         <p>
             Humans understand words through context and emotion. Computers, however, only understand numbers.
             To bridge this gap, we use <strong>Word Embeddings</strong>.
@@ -59,7 +86,7 @@
             <li>Opposites or unrelated words (like <em>Apple</em> and <em>Justice</em>) are miles apart.</li>
         </ul>
 
-        <h3>2. The 300-Dimensional "Point Cloud"</h3>
+        <h3>4. The 300-Dimensional "Point Cloud"</h3>
         <p>
             In a 3D software like Houdini or Maya, a point is defined by 3 coordinates: <span class="math">(X, Y, Z)</span>.
         </p>
@@ -69,7 +96,7 @@
             allow the computer to capture subtle nuances: one axis might represent "masculinity," another "royalty," and another "temperature."
         </p>
 
-        <h3>3. Static Embeddings (GloVe)</h3>
+        <h3>5. Static Embeddings (GloVe)</h3>
         <p>
             This project utilizes <strong>GloVe (Global Vectors for Word Representation)</strong>. These are "static" embeddings, meaning
             the computer has pre-scanned billions of lines of text (from Wikipedia and the web) to calculate these coordinates based on
