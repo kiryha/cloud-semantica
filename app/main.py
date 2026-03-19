@@ -71,15 +71,28 @@ def find_closest_word(target_vector: np.ndarray, excluded_words: set[str]) -> st
     if target_norm == 0:
         return None
 
+    # Calculate similarities for the entire 300D space
     similarities = GLOVE_MATRIX.dot(target_vector) / (NORMS * target_norm)
 
-    excluded_indices = [WORD_INDEX[w] for w in excluded_words if w in WORD_INDEX]
+    # 1. Expand exclusions to handle simple plurals/singulars
+    extended_exclusions = set(excluded_words)
+    for word in excluded_words:
+        # Add common plural suffixes
+        extended_exclusions.add(word + "s")
+        extended_exclusions.add(word + "es")
+        # Handle cases where the input is already plural
+        if word.endswith("es"):
+            extended_exclusions.add(word[:-2])
+        if word.endswith("s"):
+            extended_exclusions.add(word[:-1])
+
+    # 2. Mask all excluded indices
+    excluded_indices = [WORD_INDEX[w] for w in extended_exclusions if w in WORD_INDEX]
     if excluded_indices:
         similarities[excluded_indices] = -np.inf
 
     best_idx = int(np.argmax(similarities))
     return WORD_LIST[best_idx]
-
 
 # ---------------------------------------------------------------------------
 # Core computation
